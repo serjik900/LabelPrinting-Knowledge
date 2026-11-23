@@ -396,5 +396,6 @@
       "mode": "AI review",
       "_custom": true
     }
-  }
+  },
+  "decisions": {}
 }
