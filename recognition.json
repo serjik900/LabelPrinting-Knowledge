@@ -9,6 +9,22 @@
       "part": "23151592",
       "protractor_part": "",
       "vendor": "Coffman Truck Sales"
+    },
+    {
+      "active": 1,
+      "brand": "",
+      "description": "FUEL FILTER SPIN",
+      "part": "FG-FF5507",
+      "protractor_part": "",
+      "vendor": "Coffman Truck Sales"
+    },
+    {
+      "active": 1,
+      "brand": "",
+      "description": "FILTER LUBE SPIN",
+      "part": "FG-LF16465",
+      "protractor_part": "",
+      "vendor": "Coffman Truck Sales"
     }
   ],
   "rules": {
@@ -406,5 +422,5 @@
       "notes": "Use Item Code and quantity. Keep wrapped product descriptions together."
     }
   },
-  "updated_utc": "2026-11-23T21:58:40.904317+00:00"
+  "updated_utc": "2026-11-23T22:01:00.913729+00:00"
 }
