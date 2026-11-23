@@ -1,401 +1,410 @@
 {
+  "decisions": {},
   "format": "INVOICE-LABELS-KNOWLEDGE-1",
-  "updated_utc": "2026-11-23T02:55:34.836079+00:00",
-  "parts": [],
+  "parts": [
+    {
+      "active": 1,
+      "brand": "",
+      "description": "OIL FILTER",
+      "part": "23151592",
+      "protractor_part": "",
+      "vendor": "Coffman Truck Sales"
+    }
+  ],
   "rules": {
-    "vendor:Coffman Truck Sales": {
-      "name": "Coffman Truck Sales",
-      "aliases": [
-        "COFFMAN TRUCK SALES"
-      ],
-      "notes": "Remove one separate leading three-digit vendor code from its prefix position, including 021 or 040. Preserve attached digits and the remaining manufacturer part number.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:TransChicago Truck Group": {
-      "name": "TransChicago Truck Group",
-      "aliases": [
-        "TRANSCHICAGO TRUCK GROUP"
-      ],
-      "notes": "For TransChicago Truck Group only: remove the leading 106D/ vendor prefix and a separate leading DDE token followed by spaces or tabs. Output the remaining manufacturer part number: DDE A4711800209 becomes A4711800209. Preserve leading zeros, all remaining digits and suffixes, ABP and other manufacturer identifiers. Preserve attached DDE characters (DDEA4711800209), embedded DDE and a lone DDE with no following part number. Never change descriptions or quantities. Other sellers retain their own rules. Review against the invoice before printing.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:CIT Trucks": {
-      "name": "CIT Trucks",
-      "aliases": [
-        "CIT TRUCKS"
-      ],
-      "notes": "Dealer item table. Include each physical part row with a positive billed extended amount and positive integer invoiced Quantity. Exclude coupons and negative discount rows individually. Item Backordered - Inter-Branch applies only to the immediately preceding zero-dollar item row: keep it in the separate backorders array with its original backordered quantity and evidence, displaying Back order with no labels. Keep any separate charged row for the same part number, without adding the backordered quantity. A backorder or coupon never rejects other charged parts or the whole invoice. Prices are evidence of billing, never label quantities. All retained rows require human review.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:JX Enterprises": {
-      "name": "JX Enterprises",
-      "aliases": [
-        "JX ENTERPRISES"
-      ],
-      "notes": "Keep manufacturer suffixes such as CUM. Exclude bin locations, card receipts and terms pages.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Jim Hawk Truck Trailers": {
-      "name": "Jim Hawk Truck Trailers",
-      "aliases": [
-        "JIM HAWK TRUCK TRAILERS"
-      ],
-      "notes": "Exclude Freight and terms pages. Repeated part rows are separate items.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Action Truck Parts": {
-      "name": "Action Truck Parts",
-      "aliases": [
-        "ACTION TRUCK PARTS"
-      ],
-      "notes": "Supplier is a separate column, not part number. Credit invoices require review.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:L.A. Fasteners": {
-      "name": "L.A. Fasteners",
-      "aliases": [
-        "L.A. FASTENERS",
-        "LAFASTENERS.COM"
-      ],
-      "notes": "Use Ship Qty, not Order Qty or B.O. Qty. Item and description are stacked. Skip zero shipped.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Route One Trailers": {
-      "name": "Route One Trailers",
-      "aliases": [
-        "ROUTE ONE TRAILERS"
-      ],
-      "notes": "Seller may differ from forwarding sender. Use Part #, not line number.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:FleetPride": {
-      "name": "FleetPride",
-      "aliases": [
-        "FLEETPRIDE"
-      ],
-      "notes": "Scanned sample. Use SHIPPED quantity; MFG. CODE is separate from PART NUMBER.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Truck Country": {
-      "name": "Truck Country",
-      "aliases": [
-        "TRUCK COUNTRY"
-      ],
-      "notes": "QTY SHIP is quantity; retain full printed identifier until a prefix rule is confirmed.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Rush Truck Centers": {
-      "name": "Rush Truck Centers",
-      "aliases": [
-        "RUSH TRUCK CENTER",
-        "RUSH ENTERPRISES"
-      ],
-      "notes": "Use SALES QTY; do not include SO item number. Preserve part suffixes.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Northwest Trucks": {
-      "name": "Northwest Trucks",
-      "aliases": [
-        "NORTHWEST TRUCKS",
-        "NORTHWESTFREIGHTLINER"
-      ],
-      "notes": "Use QTY SHP. Preserve 301D/ until its removal is explicitly confirmed; do not infer from TransChicago.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:NAPA Auto Parts": {
-      "name": "NAPA Auto Parts",
-      "aliases": [
-        "NAPA AUTO PARTS"
-      ],
-      "notes": "Part Number and Line are separate columns. Preserve leading zeros; do not prepend line code.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Truck Zone Parts": {
-      "name": "Truck Zone Parts",
-      "aliases": [
-        "TRUCK ZONE PARTS",
-        "TZPARTS.COM"
-      ],
-      "notes": "Use Item Code and quantity. Keep wrapped product descriptions together.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Torque Parts": {
-      "name": "Torque Parts",
-      "aliases": [
-        "TORQUE PARTS"
-      ],
-      "notes": "Use Item Code. Cross References are not alternative barcode numbers; Site is not part of identifier.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:PGW Auto Glass": {
-      "name": "PGW Auto Glass",
-      "aliases": [
-        "PGW AUTO GLASS",
-        "PGWAUTOGLASS.COM"
-      ],
-      "notes": "Use Qty Shipped and Part Number. Exclude fuel surcharge even if placed in part-number column.",
-      "mode": "AI review",
-      "_custom": true
-    },
     "vendor:1st Ayd": {
-      "name": "1st Ayd",
+      "_custom": true,
       "aliases": [
         "1ST AYD",
         "1STAYD"
       ],
-      "notes": "Use Item and Quantity. Quantities over the app limit or ambiguous packaging units require review; never multiply by case size.",
       "mode": "AI review",
-      "_custom": true
+      "name": "1st Ayd",
+      "notes": "Use Item and Quantity. Quantities over the app limit or ambiguous packaging units require review; never multiply by case size."
+    },
+    "vendor:Action Truck Parts": {
+      "_custom": true,
+      "aliases": [
+        "ACTION TRUCK PARTS"
+      ],
+      "mode": "AI review",
+      "name": "Action Truck Parts",
+      "notes": "Supplier is a separate column, not part number. Credit invoices require review."
+    },
+    "vendor:CIT Trucks": {
+      "_custom": true,
+      "aliases": [
+        "CIT TRUCKS"
+      ],
+      "mode": "AI review",
+      "name": "CIT Trucks",
+      "notes": "Dealer item table. Include each physical part row with a positive billed extended amount and positive integer invoiced Quantity. Exclude coupons and negative discount rows individually. Item Backordered - Inter-Branch applies only to the immediately preceding zero-dollar item row: keep it in the separate backorders array with its original backordered quantity and evidence, displaying Back order with no labels. Keep any separate charged row for the same part number, without adding the backordered quantity. A backorder or coupon never rejects other charged parts or the whole invoice. Prices are evidence of billing, never label quantities. All retained rows require human review."
+    },
+    "vendor:Cintas": {
+      "_custom": true,
+      "aliases": [
+        "CINTAS"
+      ],
+      "mode": "AI review",
+      "name": "Cintas",
+      "notes": "Only physical supply Material # rows. Exclude cabinet checks, expiration checks, disinfecting services and service charges; box/bag quantities stay as invoiced."
+    },
+    "vendor:Coffman Truck Sales": {
+      "_custom": true,
+      "aliases": [
+        "COFFMAN TRUCK SALES"
+      ],
+      "mode": "AI review",
+      "name": "Coffman Truck Sales",
+      "notes": "Remove one separate leading three-digit vendor code from its prefix position, including 021 or 040. Preserve attached digits and the remaining manufacturer part number."
     },
     "vendor:Country Supply": {
-      "name": "Country Supply",
+      "_custom": true,
       "aliases": [
         "COUNTRY SUPPLY"
       ],
-      "notes": "Sample exposes Qty Ordered, not shipped quantity. Obtain/verify fulfilled quantity before labeling.",
       "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Kelley Williamson Company": {
-      "name": "Kelley Williamson Company",
-      "aliases": [
-        "KELLEY WILLIAMSON"
-      ],
-      "notes": "Bulk fluid sample billed in pounds; no discrete manufacturer part-number column. Do not turn weights or deposits into part labels.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Eco Rubber Products": {
-      "name": "Eco Rubber Products",
-      "aliases": [
-        "ECO RUBBER PRODUCTS"
-      ],
-      "notes": "Casing credits/scrap collection sample, not a normal parts invoice. No manufacturer part identifiers.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:ILoca Services": {
-      "name": "ILoca Services",
-      "aliases": [
-        "ILOCA",
-        "SEMITRAILERS.NET"
-      ],
-      "notes": "Use QTY SHP. Keep printed 110O/ and manufacturer code until a separate removal rule is confirmed.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Global Industrial": {
-      "name": "Global Industrial",
-      "aliases": [
-        "GLOBAL INDUSTRIAL"
-      ],
-      "notes": "Use STOCK NO. and invoiced QUANTITY. Exclude tracking numbers and payment/remittance stubs.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:FinditParts": {
-      "name": "FinditParts",
-      "aliases": [
-        "FINDITPARTS"
-      ],
-      "notes": "Manufacturer is separate from Part Number (example GROTE / 77353). Keep Part Number only; preserve visible truncated description without inventing its ending.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Snap-on / Hollywood Tools": {
-      "name": "Snap-on / Hollywood Tools",
-      "aliases": [
-        "HOLLYWOOD TOOLS",
-        "SNAP-ON",
-        "SNAPON.COM"
-      ],
-      "notes": "Use Part #, Qty and physical Sale line. Do not use account balances, weekly payments or financing figures.",
-      "mode": "AI review",
-      "_custom": true
+      "name": "Country Supply",
+      "notes": "Sample exposes Qty Ordered, not shipped quantity. Obtain/verify fulfilled quantity before labeling."
     },
     "vendor:Del City": {
-      "name": "Del City",
+      "_custom": true,
       "aliases": [
         "DEL CITY",
         "DELCITY.NET"
       ],
-      "notes": "Use Item and Qty Ship, not Qty Ord or Back Ord. Preserve wrapped descriptions.",
       "mode": "AI review",
-      "_custom": true
+      "name": "Del City",
+      "notes": "Use Item and Qty Ship, not Qty Ord or Back Ord. Preserve wrapped descriptions."
     },
-    "vendor:INA Equipment Sales": {
-      "name": "INA Equipment Sales",
+    "vendor:Eco Rubber Products": {
+      "_custom": true,
       "aliases": [
-        "INA EQUIPMENT SALES"
+        "ECO RUBBER PRODUCTS"
       ],
-      "notes": "Use explicit SKU embedded below description; row number and descriptive product name are not part number.",
       "mode": "AI review",
-      "_custom": true
+      "name": "Eco Rubber Products",
+      "notes": "Casing credits/scrap collection sample, not a normal parts invoice. No manufacturer part identifiers."
+    },
+    "vendor:FinditParts": {
+      "_custom": true,
+      "aliases": [
+        "FINDITPARTS"
+      ],
+      "mode": "AI review",
+      "name": "FinditParts",
+      "notes": "Manufacturer is separate from Part Number (example GROTE / 77353). Keep Part Number only; preserve visible truncated description without inventing its ending."
     },
     "vendor:Fleet Hero": {
-      "name": "Fleet Hero",
+      "_custom": true,
       "aliases": [
         "FLEET HERO",
         "FLEET-HERO.COM"
       ],
-      "notes": "Use explicit MPN column (e.g. H2247SC), not the Item & Description name. Preserve invoice Quantity.",
       "mode": "AI review",
-      "_custom": true
+      "name": "Fleet Hero",
+      "notes": "Use explicit MPN column (e.g. H2247SC), not the Item & Description name. Preserve invoice Quantity."
     },
-    "vendor:Cintas": {
-      "name": "Cintas",
+    "vendor:FleetPride": {
+      "_custom": true,
       "aliases": [
-        "CINTAS"
+        "FLEETPRIDE"
       ],
-      "notes": "Only physical supply Material # rows. Exclude cabinet checks, expiration checks, disinfecting services and service charges; box/bag quantities stay as invoiced.",
       "mode": "AI review",
-      "_custom": true
+      "name": "FleetPride",
+      "notes": "Scanned sample. Use SHIPPED quantity; MFG. CODE is separate from PART NUMBER."
     },
-    "vendor:Superior Commercial Services": {
-      "name": "Superior Commercial Services",
+    "vendor:Global Industrial": {
+      "_custom": true,
       "aliases": [
-        "SUPERIOR COMMERCIAL SERVICES"
+        "GLOBAL INDUSTRIAL"
       ],
-      "notes": "Use ITEM NO. as part number, not equipment serial number. Keep zero-priced physical accessories with positive quantity; exclude delivery/setup/training service notes.",
       "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Tire Management Holdings": {
-      "name": "Tire Management Holdings",
-      "aliases": [
-        "TIRE MANAGEMENT"
-      ],
-      "notes": "Inspected invoice is casing credits and scrap disposal. No manufacturer part-number field; no automatic labels.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Ingersoll Rand": {
-      "name": "Ingersoll Rand",
-      "aliases": [
-        "INGERSOLL-RAND",
-        "INGERSOLL RAND"
-      ],
-      "notes": "Inspected attachment is freight-only. Require a positive parts invoice with an identifiable ITEM # before enabling parts recognition.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:TransMC Truck Service": {
-      "name": "TransMC Truck Service",
-      "aliases": [
-        "TRANSMC TRUCK SERVICE",
-        "TRANSMC.US"
-      ],
-      "notes": "Inspected tire counter-sale gives descriptions, sizes and quantities without a distinct manufacturer part number. Do not invent one from tire size.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:IIVV Logistics": {
-      "name": "IIVV Logistics",
-      "aliases": [
-        "IIVV LOGISTICS"
-      ],
-      "notes": "Inspected invoices bill installation labor and fractional hours; not physical part labels.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:Tireswift / Aufine": {
-      "name": "Tireswift / Aufine",
-      "aliases": [
-        "TIRESWIFT",
-        "AUFINE"
-      ],
-      "notes": "Inspected document is a proforma invoice/sales contract. Ordered tire quantities do not establish shipped parts.",
-      "mode": "AI review",
-      "_custom": true
+      "name": "Global Industrial",
+      "notes": "Use STOCK NO. and invoiced QUANTITY. Exclude tracking numbers and payment/remittance stubs."
     },
     "vendor:Grainco FS / Morris Propane": {
-      "name": "Grainco FS / Morris Propane",
+      "_custom": true,
       "aliases": [
         "GRAINCO",
         "MORRIS PROPANE"
       ],
-      "notes": "Propane delivery sample has no part number. Do not invent an identifier from cylinder size or product description.",
       "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:JMA Equipment & Repair": {
-      "name": "JMA Equipment & Repair",
-      "aliases": [
-        "JMA EQUIPMENT",
-        "JMAEQUIPMENT"
-      ],
-      "notes": "Inspected invoice is installation labor/materials/freight without discrete part numbers. Manual review required.",
-      "mode": "AI review",
-      "_custom": true
-    },
-    "vendor:The Home Depot": {
-      "name": "The Home Depot",
-      "aliases": [
-        "THE HOME DEPOT",
-        "HOME DEPOT"
-      ],
-      "notes": "Completed positive store sales receipts only. Use the full printed numeric product identifier (UPC/item code) at the start of each merchandise row, preserving leading zeros; do not invent a manufacturer part number from the abbreviated product name. Join the following wrapped product description. For the verified single-unit receipt format, a standalone positive merchandise row without a quantity extension represents one purchased package; explicit quantity/multiplier lines override this only when unambiguous. 2PK, 4PK, dimensions and 1 LB are packaging/size descriptions, never purchased quantities. Exclude subtotal, sales tax, total, payment/card/auth codes, store/transaction numbers, membership statements, annual spend, offers and return-policy text. Returns, mixed/negative transactions, unreadable codes or ambiguous quantities require review.",
-      "mode": "AI review",
-      "_custom": true
+      "name": "Grainco FS / Morris Propane",
+      "notes": "Propane delivery sample has no part number. Do not invent an identifier from cylinder size or product description."
     },
     "vendor:Harbor Freight": {
-      "name": "Harbor Freight",
+      "_custom": true,
       "aliases": [
         "HARBOR FREIGHT",
         "HARBORFREIGHT",
         "HARBOR FREIGHTS"
       ],
-      "notes": "Completed positive merchandise sales receipts only. Use the explicit SKU as the part identifier, preserving leading zeros; use the purchased quantity shown after x beside the item price. Never use transaction/store numbers, price, capacity, dimensions, pack size or product-link identifiers as SKU or quantity. Keep the printed merchandise description. Exclude repair/protection plans, extended warranties, memberships, discounts, coupons, tax, totals and payment lines even when a plan has a SKU. The reviewed 2026-10-22 receipt contains SKU 63170 Butane Micro Torch x1, 68995 V-Shape Hang-All x1, 58291 600 lb. Capacity Hand Truck x1. The reviewed 2026-10-07 receipt includes Your Return and repair plans: mixed sale/return receipts require review and no automatic rows. An unreadable SKU or ambiguous quantity requires review.",
       "mode": "AI review",
-      "_custom": true
+      "name": "Harbor Freight",
+      "notes": "Completed positive merchandise sales receipts only. Use the explicit SKU as the part identifier, preserving leading zeros; use the purchased quantity shown after x beside the item price. Never use transaction/store numbers, price, capacity, dimensions, pack size or product-link identifiers as SKU or quantity. Keep the printed merchandise description. Exclude repair/protection plans, extended warranties, memberships, discounts, coupons, tax, totals and payment lines even when a plan has a SKU. The reviewed 2026-10-22 receipt contains SKU 63170 Butane Micro Torch x1, 68995 V-Shape Hang-All x1, 58291 600 lb. Capacity Hand Truck x1. The reviewed 2026-10-07 receipt includes Your Return and repair plans: mixed sale/return receipts require review and no automatic rows. An unreadable SKU or ambiguous quantity requires review."
     },
-    "vendor:Menards": {
-      "name": "Menards",
+    "vendor:IIVV Logistics": {
+      "_custom": true,
       "aliases": [
-        "MENARDS",
-        "MENARD, INC",
-        "MENARD INC"
+        "IIVV LOGISTICS"
       ],
-      "notes": "Completed merchandise sales receipts only. Use the printed item SKU at the start of the quantity/price line (examples 5658207, 5658208, 2651514, 2660663, 2212241). Description may precede that line and wrap. The positive integer before @ is purchased quantity: 5658207 7@$23.14 means SKU 5658207 quantity 7, not description/model 285850 or roll size 20 inches by 1000 feet. Preserve leading zeros. Exclude PICK UP AT STORE FEE (observed code 39), delivery, shipping, deposits, rebates, service/protection plans, tax, totals and payment rows. ORDER 42857 and transaction/store/job numbers are not SKUs. Product sizes, pack counts, 50# and model suffixes in descriptions are not purchased quantities. Boilerplate return-policy text alone does not make a completed sale a return. Actual returned items/negative lines, quotes, unfulfilled orders, missing seller identity, unreadable SKU or ambiguous quantities require review; do not guess seller from customer name/address.",
       "mode": "AI review",
-      "_custom": true
+      "name": "IIVV Logistics",
+      "notes": "Inspected invoices bill installation labor and fractional hours; not physical part labels."
     },
-    "vendor:Semi Tire Center LLC": {
-      "name": "Semi Tire Center LLC",
+    "vendor:ILoca Services": {
+      "_custom": true,
       "aliases": [
-        "SEMI TIRE CENTER LLC",
-        "SEMITIRECENTER@GMAIL.COM"
+        "ILOCA",
+        "SEMITRAILERS.NET"
       ],
-      "notes": "Owner-approved exception for Semi Tire Center LLC only: use the tire size plus its printed load-range letter as the label part identifier, not a manufacturer MPN. Advance GR-A 245/70R17.5 J (all position) gives part 245/70R17.5 J and the complete printed description, quantity 2 in the reviewed layout. Kumho KRS12 255/70R22.5 (all position) gives part 255/70R22.5, quantity 8. Preserve an absent load letter as absent; do not guess it. Read quantity from this invoice, never hard-code these example counts. Exclude Tire User Fee and Resale (Tire User Fee), including negative fee offsets; those are not merchandise returns. Other negative/return merchandise, ambiguous sizes or quantities, and changed layouts require review. Keep repeated rows separate, even when their tire-size identifiers match. Do not apply this exception to TransMC or other tire vendors.",
       "mode": "AI review",
-      "_custom": true
+      "name": "ILoca Services",
+      "notes": "Use QTY SHP. Keep printed 110O/ and manufacturer code until a separate removal rule is confirmed."
+    },
+    "vendor:INA Equipment Sales": {
+      "_custom": true,
+      "aliases": [
+        "INA EQUIPMENT SALES"
+      ],
+      "mode": "AI review",
+      "name": "INA Equipment Sales",
+      "notes": "Use explicit SKU embedded below description; row number and descriptive product name are not part number."
+    },
+    "vendor:Ingersoll Rand": {
+      "_custom": true,
+      "aliases": [
+        "INGERSOLL-RAND",
+        "INGERSOLL RAND"
+      ],
+      "mode": "AI review",
+      "name": "Ingersoll Rand",
+      "notes": "Inspected attachment is freight-only. Require a positive parts invoice with an identifiable ITEM # before enabling parts recognition."
+    },
+    "vendor:JMA Equipment & Repair": {
+      "_custom": true,
+      "aliases": [
+        "JMA EQUIPMENT",
+        "JMAEQUIPMENT"
+      ],
+      "mode": "AI review",
+      "name": "JMA Equipment & Repair",
+      "notes": "Inspected invoice is installation labor/materials/freight without discrete part numbers. Manual review required."
+    },
+    "vendor:JX Enterprises": {
+      "_custom": true,
+      "aliases": [
+        "JX ENTERPRISES"
+      ],
+      "mode": "AI review",
+      "name": "JX Enterprises",
+      "notes": "Keep manufacturer suffixes such as CUM. Exclude bin locations, card receipts and terms pages."
+    },
+    "vendor:Jim Hawk Truck Trailers": {
+      "_custom": true,
+      "aliases": [
+        "JIM HAWK TRUCK TRAILERS"
+      ],
+      "mode": "AI review",
+      "name": "Jim Hawk Truck Trailers",
+      "notes": "Exclude Freight and terms pages. Repeated part rows are separate items."
+    },
+    "vendor:Kelley Williamson Company": {
+      "_custom": true,
+      "aliases": [
+        "KELLEY WILLIAMSON"
+      ],
+      "mode": "AI review",
+      "name": "Kelley Williamson Company",
+      "notes": "Bulk fluid sample billed in pounds; no discrete manufacturer part-number column. Do not turn weights or deposits into part labels."
+    },
+    "vendor:L.A. Fasteners": {
+      "_custom": true,
+      "aliases": [
+        "L.A. FASTENERS",
+        "LAFASTENERS.COM"
+      ],
+      "mode": "AI review",
+      "name": "L.A. Fasteners",
+      "notes": "Use Ship Qty, not Order Qty or B.O. Qty. Item and description are stacked. Skip zero shipped."
     },
     "vendor:M&K Truck Centers": {
-      "name": "M&K Truck Centers",
+      "_custom": true,
       "aliases": [
         "M&K TRUCK CENTERS",
         "M & K TRUCK CENTERS",
         "MKTRUCKCENTERS.COM"
       ],
-      "notes": "Completed parts invoices in the reviewed Chicago Truck CDK layout: use PART NO. exactly, DESCRIPTION, and QUANTITY SHIP, not ORD. or B.O. Preserve all printed part digits and suffixes; do not infer prefix removal. Invoice number excludes the adjacent time. Extract positive shipped merchandise even when a separate negative CORE RETURN line appears: that line is a core credit, not a returned merchandise row. Exclude CORE DEPOSIT and CORE RETURN from merchandise. Record positive core deposits and negative core returns separately with explicit evidence and association; never convert dollar amounts into core units. A deposit continuation with no explicit unit quantity requires core review rather than guessed units. Negative merchandise, missing or ambiguous shipped quantity, quotes or changed layouts require review. Do not infer brand from the seller.",
       "mode": "AI review",
-      "_custom": true
+      "name": "M&K Truck Centers",
+      "notes": "Completed parts invoices in the reviewed Chicago Truck CDK layout: use PART NO. exactly, DESCRIPTION, and QUANTITY SHIP, not ORD. or B.O. Preserve all printed part digits and suffixes; do not infer prefix removal. Invoice number excludes the adjacent time. Extract positive shipped merchandise even when a separate negative CORE RETURN line appears: that line is a core credit, not a returned merchandise row. Exclude CORE DEPOSIT and CORE RETURN from merchandise. Record positive core deposits and negative core returns separately with explicit evidence and association; never convert dollar amounts into core units. A deposit continuation with no explicit unit quantity requires core review rather than guessed units. Negative merchandise, missing or ambiguous shipped quantity, quotes or changed layouts require review. Do not infer brand from the seller."
+    },
+    "vendor:Menards": {
+      "_custom": true,
+      "aliases": [
+        "MENARDS",
+        "MENARD, INC",
+        "MENARD INC"
+      ],
+      "mode": "AI review",
+      "name": "Menards",
+      "notes": "Completed merchandise sales receipts only. Use the printed item SKU at the start of the quantity/price line (examples 5658207, 5658208, 2651514, 2660663, 2212241). Description may precede that line and wrap. The positive integer before @ is purchased quantity: 5658207 7@$23.14 means SKU 5658207 quantity 7, not description/model 285850 or roll size 20 inches by 1000 feet. Preserve leading zeros. Exclude PICK UP AT STORE FEE (observed code 39), delivery, shipping, deposits, rebates, service/protection plans, tax, totals and payment rows. ORDER 42857 and transaction/store/job numbers are not SKUs. Product sizes, pack counts, 50# and model suffixes in descriptions are not purchased quantities. Boilerplate return-policy text alone does not make a completed sale a return. Actual returned items/negative lines, quotes, unfulfilled orders, missing seller identity, unreadable SKU or ambiguous quantities require review; do not guess seller from customer name/address."
+    },
+    "vendor:NAPA Auto Parts": {
+      "_custom": true,
+      "aliases": [
+        "NAPA AUTO PARTS"
+      ],
+      "mode": "AI review",
+      "name": "NAPA Auto Parts",
+      "notes": "Part Number and Line are separate columns. Preserve leading zeros; do not prepend line code."
+    },
+    "vendor:Northwest Trucks": {
+      "_custom": true,
+      "aliases": [
+        "NORTHWEST TRUCKS",
+        "NORTHWESTFREIGHTLINER"
+      ],
+      "mode": "AI review",
+      "name": "Northwest Trucks",
+      "notes": "Use QTY SHP. Preserve 301D/ until its removal is explicitly confirmed; do not infer from TransChicago."
+    },
+    "vendor:PGW Auto Glass": {
+      "_custom": true,
+      "aliases": [
+        "PGW AUTO GLASS",
+        "PGWAUTOGLASS.COM"
+      ],
+      "mode": "AI review",
+      "name": "PGW Auto Glass",
+      "notes": "Use Qty Shipped and Part Number. Exclude fuel surcharge even if placed in part-number column."
+    },
+    "vendor:Route One Trailers": {
+      "_custom": true,
+      "aliases": [
+        "ROUTE ONE TRAILERS"
+      ],
+      "mode": "AI review",
+      "name": "Route One Trailers",
+      "notes": "Seller may differ from forwarding sender. Use Part #, not line number."
+    },
+    "vendor:Rush Truck Centers": {
+      "_custom": true,
+      "aliases": [
+        "RUSH TRUCK CENTER",
+        "RUSH ENTERPRISES"
+      ],
+      "mode": "AI review",
+      "name": "Rush Truck Centers",
+      "notes": "Use SALES QTY; do not include SO item number. Preserve part suffixes."
+    },
+    "vendor:Semi Tire Center LLC": {
+      "_custom": true,
+      "aliases": [
+        "SEMI TIRE CENTER LLC",
+        "SEMITIRECENTER@GMAIL.COM"
+      ],
+      "mode": "AI review",
+      "name": "Semi Tire Center LLC",
+      "notes": "Owner-approved exception for Semi Tire Center LLC only: use the tire size plus its printed load-range letter as the label part identifier, not a manufacturer MPN. Advance GR-A 245/70R17.5 J (all position) gives part 245/70R17.5 J and the complete printed description, quantity 2 in the reviewed layout. Kumho KRS12 255/70R22.5 (all position) gives part 255/70R22.5, quantity 8. Preserve an absent load letter as absent; do not guess it. Read quantity from this invoice, never hard-code these example counts. Exclude Tire User Fee and Resale (Tire User Fee), including negative fee offsets; those are not merchandise returns. Other negative/return merchandise, ambiguous sizes or quantities, and changed layouts require review. Keep repeated rows separate, even when their tire-size identifiers match. Do not apply this exception to TransMC or other tire vendors."
+    },
+    "vendor:Snap-on / Hollywood Tools": {
+      "_custom": true,
+      "aliases": [
+        "HOLLYWOOD TOOLS",
+        "SNAP-ON",
+        "SNAPON.COM"
+      ],
+      "mode": "AI review",
+      "name": "Snap-on / Hollywood Tools",
+      "notes": "Use Part #, Qty and physical Sale line. Do not use account balances, weekly payments or financing figures."
+    },
+    "vendor:Superior Commercial Services": {
+      "_custom": true,
+      "aliases": [
+        "SUPERIOR COMMERCIAL SERVICES"
+      ],
+      "mode": "AI review",
+      "name": "Superior Commercial Services",
+      "notes": "Use ITEM NO. as part number, not equipment serial number. Keep zero-priced physical accessories with positive quantity; exclude delivery/setup/training service notes."
+    },
+    "vendor:The Home Depot": {
+      "_custom": true,
+      "aliases": [
+        "THE HOME DEPOT",
+        "HOME DEPOT"
+      ],
+      "mode": "AI review",
+      "name": "The Home Depot",
+      "notes": "Completed positive store sales receipts only. Use the full printed numeric product identifier (UPC/item code) at the start of each merchandise row, preserving leading zeros; do not invent a manufacturer part number from the abbreviated product name. Join the following wrapped product description. For the verified single-unit receipt format, a standalone positive merchandise row without a quantity extension represents one purchased package; explicit quantity/multiplier lines override this only when unambiguous. 2PK, 4PK, dimensions and 1 LB are packaging/size descriptions, never purchased quantities. Exclude subtotal, sales tax, total, payment/card/auth codes, store/transaction numbers, membership statements, annual spend, offers and return-policy text. Returns, mixed/negative transactions, unreadable codes or ambiguous quantities require review."
+    },
+    "vendor:Tire Management Holdings": {
+      "_custom": true,
+      "aliases": [
+        "TIRE MANAGEMENT"
+      ],
+      "mode": "AI review",
+      "name": "Tire Management Holdings",
+      "notes": "Inspected invoice is casing credits and scrap disposal. No manufacturer part-number field; no automatic labels."
+    },
+    "vendor:Tireswift / Aufine": {
+      "_custom": true,
+      "aliases": [
+        "TIRESWIFT",
+        "AUFINE"
+      ],
+      "mode": "AI review",
+      "name": "Tireswift / Aufine",
+      "notes": "Inspected document is a proforma invoice/sales contract. Ordered tire quantities do not establish shipped parts."
+    },
+    "vendor:Torque Parts": {
+      "_custom": true,
+      "aliases": [
+        "TORQUE PARTS"
+      ],
+      "mode": "AI review",
+      "name": "Torque Parts",
+      "notes": "Use Item Code. Cross References are not alternative barcode numbers; Site is not part of identifier."
+    },
+    "vendor:TransChicago Truck Group": {
+      "_custom": true,
+      "aliases": [
+        "TRANSCHICAGO TRUCK GROUP"
+      ],
+      "mode": "AI review",
+      "name": "TransChicago Truck Group",
+      "notes": "For TransChicago Truck Group only: remove the leading 106D/ vendor prefix and a separate leading DDE token followed by spaces or tabs. Output the remaining manufacturer part number: DDE A4711800209 becomes A4711800209. Preserve leading zeros, all remaining digits and suffixes, ABP and other manufacturer identifiers. Preserve attached DDE characters (DDEA4711800209), embedded DDE and a lone DDE with no following part number. Never change descriptions or quantities. Other sellers retain their own rules. Review against the invoice before printing."
+    },
+    "vendor:TransMC Truck Service": {
+      "_custom": true,
+      "aliases": [
+        "TRANSMC TRUCK SERVICE",
+        "TRANSMC.US"
+      ],
+      "mode": "AI review",
+      "name": "TransMC Truck Service",
+      "notes": "Inspected tire counter-sale gives descriptions, sizes and quantities without a distinct manufacturer part number. Do not invent one from tire size."
+    },
+    "vendor:Truck Country": {
+      "_custom": true,
+      "aliases": [
+        "TRUCK COUNTRY"
+      ],
+      "mode": "AI review",
+      "name": "Truck Country",
+      "notes": "QTY SHIP is quantity; retain full printed identifier until a prefix rule is confirmed."
+    },
+    "vendor:Truck Zone Parts": {
+      "_custom": true,
+      "aliases": [
+        "TRUCK ZONE PARTS",
+        "TZPARTS.COM"
+      ],
+      "mode": "AI review",
+      "name": "Truck Zone Parts",
+      "notes": "Use Item Code and quantity. Keep wrapped product descriptions together."
     }
   },
-  "decisions": {}
+  "updated_utc": "2026-11-23T21:58:40.904317+00:00"
 }
