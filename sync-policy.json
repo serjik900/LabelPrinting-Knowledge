@@ -1,5 +1,5 @@
 {
-  "minimum_app_version": "2026.11.22.33",
+  "minimum_app_version": "2026.11.22.34",
   "mode": "on-approved-rule-change",
   "periodic_publishing": false,
   "startup_download": true,
@@ -7,6 +7,7 @@
   "identical_entries": "skip",
   "conflicting_versions": "preserve local and shared values until a choice is saved",
   "decisions": "recognition.json#/decisions",
-  "publisher_access": "GitHub Contents write permission required",
-  "private_invoice_data": "excluded"
+  "publisher_access": "Automatic per-PC registration through HTTPS relay; no GitHub login on PCs",
+  "private_invoice_data": "excluded",
+  "relay": "https://parts.ittr.pro/label-knowledge/v1"
 }
