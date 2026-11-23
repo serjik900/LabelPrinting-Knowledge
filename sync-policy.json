@@ -1,5 +1,5 @@
 {
-  "minimum_app_version": "2026.11.22.34",
+  "minimum_app_version": "2026.11.22.35",
   "mode": "on-approved-rule-change",
   "periodic_publishing": false,
   "startup_download": true,
@@ -9,5 +9,11 @@
   "decisions": "recognition.json#/decisions",
   "publisher_access": "Automatic per-PC registration through HTTPS relay; no GitHub login on PCs",
   "private_invoice_data": "excluded",
-  "relay": "https://parts.ittr.pro/label-knowledge/v1"
+  "relay": "https://parts.ittr.pro/label-knowledge/v1",
+  "automatic_receive": true,
+  "receive_interval_seconds": 30,
+  "receive_jitter_seconds": 5,
+  "default_for_new_installs_and_updates": true,
+  "conditional_reads": "ETag / empty 304",
+  "external_github_check_seconds": 300
 }
