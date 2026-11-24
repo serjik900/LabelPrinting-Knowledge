@@ -1,5 +1,22 @@
 {
-  "decisions": {},
+  "decisions": {
+    "ffd7d9da9f35de8b05e7294c271a70365f575ed25715528066c7a17cdfafad7e": {
+      "identity": "[\"Rule\",\"vendor:transchicago truck group\"]",
+      "versions": [
+        "03720f0065985d4a81ffc369df91552ff6405db99720ec9d37f2f8a269a0eca9",
+        "115143707f6269bd134b622a8b2d41127b80a0befba4bf70175d971fbcc966e9"
+      ],
+      "selected": "115143707f6269bd134b622a8b2d41127b80a0befba4bf70175d971fbcc966e9"
+    },
+    "31a2e340064da7f6e2c12ea8e53ff457393608ec097e78470527cdcd811c0afe": {
+      "identity": "[\"Rule\",\"vendor:cit trucks\"]",
+      "versions": [
+        "0cf0af045b174e6e0cbb62349b5ee522ff8c2033ef021f1fe687ce09ae49234f",
+        "a8d5c67341d93f9d81a9d3d36e06455f711f95fc2148cc6cafa229cb9792ab6f"
+      ],
+      "selected": "a8d5c67341d93f9d81a9d3d36e06455f711f95fc2148cc6cafa229cb9792ab6f"
+    }
+  },
   "format": "INVOICE-LABELS-KNOWLEDGE-1",
   "parts": [
     {
@@ -56,13 +73,14 @@
       "notes": "Supplier is a separate column, not part number. Credit invoices require review."
     },
     "vendor:CIT Trucks": {
-      "_custom": true,
+      "name": "CIT Trucks",
       "aliases": [
         "CIT TRUCKS"
       ],
+      "notes": "Dealer item table. Include each charged physical part with positive extended amount and explicit positive integer invoiced Quantity. Exclude only the individual backordered/unshipped rows and coupons/discounts, keeping other billed merchandise for review. Item Backordered - Inter-Branch belongs only to its immediately preceding zero-dollar row, even if its printed Quantity is positive. A separate charged row for the same identifier remains included with its own quantity. Never add the backorder quantity to the charged quantity. A backorder or coupon does not reject the whole invoice. Read quantity from the invoice, never price or totals. Preserve exact identifiers and descriptions. All retained rows require human review before printing. Retain explicitly backordered physical parts in the separate backorders array, with exact identifier, description, original backordered quantity and short printed evidence. Display these records as Back order, never as printable merchandise. Coupons and discounts are not backorders.",
+      "verified_at": "2026-11-11T00:20:20.239023+00:00",
       "mode": "AI review",
-      "name": "CIT Trucks",
-      "notes": "Dealer item table. Include each physical part row with a positive billed extended amount and positive integer invoiced Quantity. Exclude coupons and negative discount rows individually. Item Backordered - Inter-Branch applies only to the immediately preceding zero-dollar item row: keep it in the separate backorders array with its original backordered quantity and evidence, displaying Back order with no labels. Keep any separate charged row for the same part number, without adding the backordered quantity. A backorder or coupon never rejects other charged parts or the whole invoice. Prices are evidence of billing, never label quantities. All retained rows require human review."
+      "_custom": true
     },
     "vendor:Cintas": {
       "_custom": true,
@@ -392,13 +410,14 @@
       "notes": "Use Item Code. Cross References are not alternative barcode numbers; Site is not part of identifier."
     },
     "vendor:TransChicago Truck Group": {
-      "_custom": true,
+      "name": "TransChicago Truck Group",
       "aliases": [
         "TRANSCHICAGO TRUCK GROUP"
       ],
+      "notes": "For TransChicago Truck Group only: remove the leading 106D/ vendor prefix and a separate leading DDE token followed by spaces or tabs. Output the remaining manufacturer part number: DDE A4711800209 becomes A4711800209. Preserve leading zeros, all remaining digits and suffixes, ABP and other manufacturer identifiers. Preserve attached DDE characters (DDEA4711800209), embedded DDE and a lone DDE with no following part number. Never change descriptions or quantities. Other sellers retain their own rules. Review against the invoice before printing.",
+      "verified_at": "2026-11-18T01:05:56.136692+00:00",
       "mode": "AI review",
-      "name": "TransChicago Truck Group",
-      "notes": "For TransChicago Truck Group only: remove the leading 106D/ vendor prefix and a separate leading DDE token followed by spaces or tabs. Output the remaining manufacturer part number: DDE A4711800209 becomes A4711800209. Preserve leading zeros, all remaining digits and suffixes, ABP and other manufacturer identifiers. Preserve attached DDE characters (DDEA4711800209), embedded DDE and a lone DDE with no following part number. Never change descriptions or quantities. Other sellers retain their own rules. Review against the invoice before printing."
+      "_custom": true
     },
     "vendor:TransMC Truck Service": {
       "_custom": true,
@@ -430,5 +449,5 @@
       "notes": "Use Item Code and quantity. Keep wrapped product descriptions together."
     }
   },
-  "updated_utc": "2026-11-23T22:01:16.221147+00:00"
+  "updated_utc": "2026-11-24T01:27:26.855Z"
 }
